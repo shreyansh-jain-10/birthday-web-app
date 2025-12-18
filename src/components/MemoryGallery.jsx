@@ -25,6 +25,8 @@ function PhotoGridItem({ photo, index }) {
           src={photo.src}
           alt=""
           className="memory-photo-item__image"
+          loading="eager"
+          fetchPriority="high"
           onError={(e) => {
             // Fallback to placeholder if image fails to load
             e.target.style.display = 'none';

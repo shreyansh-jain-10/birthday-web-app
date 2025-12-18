@@ -17,6 +17,8 @@ export default function PresentBeautifulGirlScreen({ onNext }) {
                 src="/her_photo_two/IMG_1538.jpg"
                 alt="Beautiful girl"
                 className="present-beautiful-girl-screen__photo"
+                loading="eager"
+                fetchPriority="high"
                 onError={(e) => {
                   console.error('Failed to load image:', e.target.src);
                 }}
@@ -27,6 +29,8 @@ export default function PresentBeautifulGirlScreen({ onNext }) {
                 src="/her_photo_two/IMG_1527.jpg"
                 alt="Beautiful girl"
                 className="present-beautiful-girl-screen__photo"
+                loading="eager"
+                fetchPriority="high"
                 onError={(e) => {
                   console.error('Failed to load image:', e.target.src);
                 }}

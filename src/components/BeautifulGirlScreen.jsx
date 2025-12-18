@@ -12,6 +12,8 @@ export default function BeautifulGirlScreen({ onNext }) {
               src="/her_photo_one/IMG_1353.jpg"
               alt="Beautiful girl"
               className="beautiful-girl-screen__photo"
+              loading="eager"
+              fetchPriority="high"
               onError={(e) => {
                 console.error('Failed to load image:', e.target.src);
               }}

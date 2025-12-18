@@ -16,6 +16,8 @@ export default function SelfiesTogetherScreen({ onNext }) {
                 src="/selfies_together/IMG_0272.jpg"
                 alt="Selfie together"
                 className="selfies-together-screen__photo"
+                loading="eager"
+                fetchPriority="high"
                 onError={(e) => {
                   console.error('Failed to load image:', e.target.src);
                 }}
@@ -27,6 +29,8 @@ export default function SelfiesTogetherScreen({ onNext }) {
                   src="/selfies_together/IMG_5692.jpg"
                   alt="Selfie together"
                   className="selfies-together-screen__photo"
+                  loading="eager"
+                  fetchPriority="high"
                   onError={(e) => {
                     console.error('Failed to load image:', e.target.src);
                   }}
@@ -37,6 +41,8 @@ export default function SelfiesTogetherScreen({ onNext }) {
                   src="/selfies_together/IMG_1540.jpg"
                   alt="Selfie together"
                   className="selfies-together-screen__photo"
+                  loading="eager"
+                  fetchPriority="high"
                   onError={(e) => {
                     console.error('Failed to load image:', e.target.src);
                   }}

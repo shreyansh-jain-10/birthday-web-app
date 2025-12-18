@@ -17,6 +17,8 @@ export default function ChildhoodBeautifulScreen({ onNext }) {
                 src="/her_kid_photos/IMG_4802.jpg"
                 alt="Beautiful girl as a child"
                 className="childhood-beautiful-screen__photo"
+                loading="eager"
+                fetchPriority="high"
                 onError={(e) => {
                   console.error('Failed to load image:', e.target.src);
                 }}
@@ -27,6 +29,8 @@ export default function ChildhoodBeautifulScreen({ onNext }) {
                 src="/her_kid_photos/IMG_4804.PNG"
                 alt="Beautiful girl as a child"
                 className="childhood-beautiful-screen__photo"
+                loading="eager"
+                fetchPriority="high"
                 onError={(e) => {
                   console.error('Failed to load image:', e.target.src);
                 }}
