@@ -22,7 +22,7 @@ function getTimeRemaining(targetDate) {
   };
 }
 
-export default function Countdown({ targetDate, onComplete, onCelebrate, isReady }) {
+export default function Countdown({ targetDate, onComplete, onCelebrate, isReady, age }) {
   const [timeLeft, setTimeLeft] = useState(() => getTimeRemaining(targetDate));
   const completeCalledRef = useRef(false);
 
@@ -67,7 +67,7 @@ export default function Countdown({ targetDate, onComplete, onCelebrate, isReady
         </p>
 
         <CelebrateButton
-          disabled={!isComplete}
+          disabled={false}
           onClick={onCelebrate}
         />
       </div>

@@ -4,7 +4,7 @@ import React from 'react';
 // `fast` makes them move quicker for party mode.
 
 const BALLOON_COUNT = 18;
-const BALLOON_COLORS = ['#FF6B6B', '#FFD93D', '#6C5CE7', '#00CEC9', '#FF9F1C'];
+const BALLOON_COLORS = ['#FF4444', '#FF6B6B', '#CC0000', '#FF8888', '#8B0000'];
 
 function Balloon({ index, fast }) {
   const color = BALLOON_COLORS[index % BALLOON_COLORS.length];

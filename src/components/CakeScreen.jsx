@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import confetti from 'canvas-confetti';
+import Sparkles from './Sparkles.jsx';
 
 const CAKE_CUT_DURATION_MS = 1100;
 
-export default function CakeScreen({ onNext }) {
+export default function CakeScreen({ onNext, onCakeCut }) {
   const [isCandleLit, setIsCandleLit] = useState(true);
   const [isCakeCut, setIsCakeCut] = useState(false);
+  const [showSparkles, setShowSparkles] = useState(false);
 
   const handleCandleClick = (event) => {
     event.stopPropagation();
@@ -25,11 +28,50 @@ export default function CakeScreen({ onNext }) {
     }
 
     setIsCakeCut(true);
+    setShowSparkles(true);
+
+    // Fire confetti bursts when cake is cut
+    let bursts = 0;
+    const confettiInterval = setInterval(() => {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#FF4444', '#FF6B6B', '#CC0000', '#FF8888', '#8B0000'],
+      });
+      
+      // Additional bursts from sides
+      confetti({
+        particleCount: 50,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0.2, y: 0.6 },
+        colors: ['#FF4444', '#FF6B6B', '#CC0000'],
+      });
+      
+      confetti({
+        particleCount: 50,
+        angle: 120,
+        spread: 55,
+        origin: { x: 0.8, y: 0.6 },
+        colors: ['#FF4444', '#FF6B6B', '#CC0000'],
+      });
+
+      bursts += 1;
+      if (bursts >= 4) {
+        clearInterval(confettiInterval);
+      }
+    }, 300);
+
+    // Call parent callback if provided
+    if (typeof onCakeCut === 'function') {
+      onCakeCut();
+    }
 
     if (typeof onNext === 'function') {
       window.setTimeout(() => {
         onNext();
-      }, CAKE_CUT_DURATION_MS);
+      }, CAKE_CUT_DURATION_MS + 500); // Add a bit more time to enjoy the effects
     }
   };
 
@@ -41,6 +83,11 @@ export default function CakeScreen({ onNext }) {
 
   return (
     <section className="screen screen--centered cake-screen">
+      {showSparkles && (
+        <div className="cake-screen__sparkles-overlay">
+          <Sparkles active={true} count={40} />
+        </div>
+      )}
       <div className="screen-content">
         <p className="eyebrow">A little birthday ritual 🎂</p>
         <h1 className="title">To my princess</h1>
@@ -144,11 +191,11 @@ export default function CakeScreen({ onNext }) {
                       <div className="absolute -top-10 left-1/2 transform -translate-x-1/2">
                         <div className="relative w-6 h-10 animate-flicker">
                           {/* Outer flame */}
-                          <div className="absolute inset-0 bg-gradient-to-t from-yellow-400 via-orange-500 to-red-500 rounded-full blur-sm opacity-80" />
+                          <div className="absolute inset-0 rounded-full blur-sm opacity-80" style={{ background: 'radial-gradient(circle at 30% 0%, #ffffff, #ff6b6b 45%, #cc0000 80%)' }} />
                           {/* Inner flame */}
-                          <div className="absolute inset-2 bg-gradient-to-t from-yellow-200 via-yellow-300 to-orange-400 rounded-full" />
+                          <div className="absolute inset-2 rounded-full" style={{ background: 'radial-gradient(circle at 30% 0%, #ffffff, #ff8888 60%, #ff4444)' }} />
                           {/* Flame glow */}
-                          <div className="absolute -inset-4 bg-orange-400 rounded-full blur-xl opacity-50 animate-pulse" />
+                          <div className="absolute -inset-4 rounded-full blur-xl opacity-50 animate-pulse" style={{ backgroundColor: '#ff6b6b' }} />
                         </div>
                       </div>
                     )}
@@ -163,11 +210,11 @@ export default function CakeScreen({ onNext }) {
                     )}
 
                     {/* Candle body */}
-                    <div className="w-4 h-16 bg-gradient-to-b from-pink-300 to-pink-400 rounded-t-sm shadow-lg relative">
+                    <div className="w-4 h-16 bg-gradient-to-b from-pink-300 to-pink-400 rounded-t-sm shadow-lg relative" style={{ background: 'linear-gradient(to bottom, #ff8888, #ff4444)' }}>
                       {/* Candle stripes */}
-                      <div className="absolute top-2 left-0 right-0 h-1 bg-pink-500 opacity-50" />
-                      <div className="absolute top-6 left-0 right-0 h-1 bg-pink-500 opacity-50" />
-                      <div className="absolute top-10 left-0 right-0 h-1 bg-pink-500 opacity-50" />
+                      <div className="absolute top-2 left-0 right-0 h-1 opacity-50" style={{ backgroundColor: '#cc0000' }} />
+                      <div className="absolute top-6 left-0 right-0 h-1 opacity-50" style={{ backgroundColor: '#cc0000' }} />
+                      <div className="absolute top-10 left-0 right-0 h-1 opacity-50" style={{ backgroundColor: '#cc0000' }} />
                     </div>
 
                   {/* Candle wick */}
@@ -239,8 +286,9 @@ export default function CakeScreen({ onNext }) {
                 {[...Array(8)].map((_, i) => (
                   <div
                     key={i}
-                    className="absolute w-2 h-2 bg-yellow-300 rounded-full animate-sparkle"
+                    className="absolute w-2 h-2 rounded-full animate-sparkle"
                     style={{
+                      backgroundColor: '#ff6b6b',
                       top: `${Math.random() * 100}%`,
                       left: `${Math.random() * 100}%`,
                       animationDelay: `${i * 0.2}s`,

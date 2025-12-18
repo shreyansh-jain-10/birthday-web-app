@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 // Third screen: party mode with lights and faster balloons.
 
 const LIGHT_COUNT = 14;
 
-export default function PartyScreen({ partyOn, onTurnLightsOn, onShowMessage }) {
+export default function PartyScreen({ partyOn, onTurnLightsOn, onNext }) {
+  // Automatically turn on lights when the component mounts
+  useEffect(() => {
+    if (!partyOn && onTurnLightsOn) {
+      onTurnLightsOn();
+    }
+  }, []); // Empty dependency array means this runs once on mount
+
   return (
     <section className="screen screen--centered party-screen">
       <div className="party-screen__lights">
@@ -30,23 +37,14 @@ export default function PartyScreen({ partyOn, onTurnLightsOn, onShowMessage }) 
         </p>
 
         <div className="party-screen__buttons">
-          {!partyOn && (
+          {partyOn && onNext && (
             <button
               type="button"
               className="primary-button"
-              onClick={onTurnLightsOn}
+              onClick={onNext}
+              style={{ marginTop: '1rem' }}
             >
-              Turn the lights on
-            </button>
-          )}
-
-          {partyOn && (
-            <button
-              type="button"
-              className="secondary-button"
-              onClick={onShowMessage}
-            >
-              I have a message for you
+              Let's go to surprise →
             </button>
           )}
         </div>
