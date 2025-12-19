@@ -36,7 +36,7 @@ export default function CurtainMessage({ curtainsOpen, message, onToggleCurtains
           {curtainsOpen && (
             <article className="letter">
               <div className="letter__paper">
-                <p className="letter__greeting">To my birthday star, Anushka 🎂</p>
+                <p className="letter__greeting">To my princess, Anushka 🎂</p>
                 <p className="letter__body">
                   {message}
                 </p>

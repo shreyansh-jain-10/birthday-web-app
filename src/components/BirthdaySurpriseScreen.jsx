@@ -24,7 +24,7 @@ export default function BirthdaySurpriseScreen({ onNext }) {
             A birthday surprise, wrapped just for you 🎁
           </h1>
           <p className="birthday-surprise-screen__subtitle">
-            It's a small birthday surprise, made with all my love and every happy wish for you, Anushka.
+            It's a small birthday surprise, made with all my love for you, Anushka.
           </p>
           
           {onNext && (

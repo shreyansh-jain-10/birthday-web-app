@@ -48,8 +48,8 @@ export default function MemoryGallery({ onNext }) {
   return (
     <section className="screen screen--centered memory-gallery">
       <div className="screen-content">
-        <p className="eyebrow">A collection of memories 💝</p>
-        <h1 className="title">My favourite photos together</h1>
+        <p className="eyebrow">A collection of our memories 💝</p>
+        <h1 className="title">Presenting you my favourite photos together</h1>
 
         <div className="memory-gallery__grid memory-gallery__grid--2photos">
           {PHOTOS.map((photo, index) => (

@@ -32,8 +32,8 @@ export default function PartyScreen({ partyOn, onTurnLightsOn, onNext }) {
         </h1>
 
         <p className="subtitle">
-          The candles are ready, the music is waiting, and the whole room is here just to celebrate
-          you. Let&rsquo;s light it all up and make a wish.
+          Candles ready, music playing, and everything set just for you.
+          Let's light it up and make a wish 💛
         </p>
 
         <div className="party-screen__buttons">

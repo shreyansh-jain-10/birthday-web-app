@@ -8,7 +8,7 @@ export default function ChildhoodBeautifulScreen({ onNext }) {
       <div className="screen-content">
         <div className="childhood-beautiful-screen__content">
           <h1 className="childhood-beautiful-screen__title">
-            P.S. She has been beautiful since childhood
+            P.S. She has been beautiful since childhood 💖
           </h1>
           
           <div className="childhood-beautiful-screen__photos">

@@ -8,7 +8,7 @@ export default function PresentBeautifulGirlScreen({ onNext }) {
       <div className="screen-content">
         <div className="present-beautiful-girl-screen__content">
           <h1 className="present-beautiful-girl-screen__title">
-            I repeat she is the most beautiful girl
+            I repeat she is the most beautiful girl 💖
           </h1>
           
           <div className="present-beautiful-girl-screen__photos">

@@ -14,8 +14,6 @@ import MessageIntroScreen from './components/MessageIntroScreen.jsx';
 import Balloons from './components/Balloons.jsx';
 import Sparkles from './components/Sparkles.jsx';
 import Fireworks from './components/Fireworks.jsx';
-import { messages } from './data/messages.js';
-
 // Central configuration values for easy customization.
 // Countdown target: 20 December, 12:00 AM (local time)
 const TARGET_BIRTHDAY_ISO = '2025-12-20T00:00:00';
@@ -24,6 +22,9 @@ const BIRTH_DATE_ISO = '2000-12-20'; // Example: adjust to actual birth year
 const CONFETTI_PARTICLE_COUNT = 90;
 const CONFETTI_BURST_COUNT = 3;
 const CONFETTI_BURST_INTERVAL_MS = 420;
+
+// Custom birthday message - write your own message here
+const CUSTOM_MESSAGE = 'Write your heartfelt birthday message here. This will be displayed when the curtains open.';
 
 const initialTargetDate = new Date(TARGET_BIRTHDAY_ISO);
 
@@ -57,18 +58,13 @@ function fireConfettiBursts() {
   }, CONFETTI_BURST_INTERVAL_MS);
 }
 
-function getRandomMessage() {
-  if (!messages || messages.length === 0) return '';
-  const index = Math.floor(Math.random() * messages.length);
-  return messages[index];
-}
 
 export default function App() {
   const [screen, setScreen] = useState('countdown'); // "countdown" | "party" | "birthdaySurprise" | "beautifulGirl" | "presentBeautifulGirl" | "childhoodBeautiful" | "cake" | "selfiesTogether" | "gallery" | "messageIntro" | "message"
   const [hasCountdownFinished, setHasCountdownFinished] = useState(false);
   const [partyOn, setPartyOn] = useState(false);
   const [curtainsOpen, setCurtainsOpen] = useState(false);
-  const [selectedMessage, setSelectedMessage] = useState(getRandomMessage);
+  const [selectedMessage, setSelectedMessage] = useState(CUSTOM_MESSAGE);
   const [fireworksTrigger, setFireworksTrigger] = useState(0);
 
   const handleCountdownComplete = useCallback(() => {
@@ -128,7 +124,7 @@ export default function App() {
   }, []);
 
   const handleShowMessage = useCallback(() => {
-    setSelectedMessage(getRandomMessage());
+    setSelectedMessage(CUSTOM_MESSAGE);
     setCurtainsOpen(false);
     setScreen('message');
   }, []);

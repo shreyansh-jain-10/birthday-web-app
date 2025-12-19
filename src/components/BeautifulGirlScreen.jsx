@@ -27,7 +27,7 @@ export default function BeautifulGirlScreen({ onNext }) {
               type="button"
               className="primary-button"
               onClick={onNext}
-              style={{ marginTop: '2rem' }}
+              style={{ marginTop: '1rem' }}
             >
               Continue →
             </button>

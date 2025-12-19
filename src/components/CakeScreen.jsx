@@ -90,8 +90,8 @@ export default function CakeScreen({ onNext, onCakeCut }) {
       )}
       <div className="screen-content">
         <p className="eyebrow">A little birthday ritual 🎂</p>
-        <h1 className="title">To my princess</h1>
-        <p className="subtitle">A virtual birthday cake just for you 🎂</p>
+        <h1 className="title">To my WIFE</h1>
+        <p className="subtitle">A birthday cake just for you 🎂</p>
         <p className="subtitle">{subtitle}</p>
 
         {/* Cake Container */}

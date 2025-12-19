@@ -5,7 +5,7 @@ export default function MessageIntroScreen({ onNext }) {
     <section className="screen screen--centered message-intro-screen">
       <div className="screen-content">
         <h1 className="title">
-          Last but not the least I have wrote a message for you love
+          Last but not the least I have wrote a message for you sweetheart.
         </h1>
         
         {onNext && (

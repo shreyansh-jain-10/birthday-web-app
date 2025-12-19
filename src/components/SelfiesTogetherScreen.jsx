@@ -8,7 +8,7 @@ export default function SelfiesTogetherScreen({ onNext }) {
       <div className="screen-content">
         <div className="selfies-together-screen__content">
           <p className="eyebrow">Memories together 💕</p>
-          <h1 className="title">Selfies together</h1>
+          <h1 className="title">Selfies together💋( SCROLL )</h1>
           
           <div className="selfies-together-screen__photos">
             <div className="selfies-together-screen__photo-container selfies-together-screen__photo-container--large">

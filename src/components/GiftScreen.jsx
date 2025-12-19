@@ -22,7 +22,7 @@ export default function GiftScreen({ onNext }) {
       <div className="screen-content gift-screen__content">
         <h1 className="title">A birthday surprise, wrapped just for you 🎁</h1>
         <p className="subtitle">
-          It’s a small birthday surprise, made with all my love and every happy wish for you,
+          It’s a small birthday surprise, made with all my love for you,
           Anushka.
         </p>
 
