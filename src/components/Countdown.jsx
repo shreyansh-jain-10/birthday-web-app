@@ -63,11 +63,12 @@ export default function Countdown({ targetDate, onComplete, onCelebrate, isReady
 
         <p className="subtitle">
           When the timer hits zero, tap the button below and let your birthday surprise burst into
-          colors, Anushka.
+          colors, Anushka. 
+          (Keep the volume UP)
         </p>
 
         <CelebrateButton
-          disabled={false}
+          disabled={timeLeft.total > 0}
           onClick={onCelebrate}
         />
       </div>

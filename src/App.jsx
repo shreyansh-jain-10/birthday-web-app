@@ -14,6 +14,7 @@ import MessageIntroScreen from './components/MessageIntroScreen.jsx';
 import Balloons from './components/Balloons.jsx';
 import Sparkles from './components/Sparkles.jsx';
 import Fireworks from './components/Fireworks.jsx';
+import MusicPlayer from './components/MusicPlayer.jsx';
 // Central configuration values for easy customization.
 // Countdown target: 20 December, 12:00 AM (local time)
 const TARGET_BIRTHDAY_ISO = '2025-12-20T00:00:00';
@@ -22,6 +23,10 @@ const BIRTH_DATE_ISO = '2000-12-20'; // Example: adjust to actual birth year
 const CONFETTI_PARTICLE_COUNT = 90;
 const CONFETTI_BURST_COUNT = 3;
 const CONFETTI_BURST_INTERVAL_MS = 420;
+
+// Music URL from Cloudinary - upload your music file to Cloudinary and add the URL here
+// Example: 'https://res.cloudinary.com/dd6gpvdcx/video/upload/v1234567890/birthday-music.mp3'
+const MUSIC_URL = 'https://res.cloudinary.com/dd6gpvdcx/video/upload/v1766151717/birthday-music_coyl10.mp3';
 
 // Custom birthday message - write your own message here
 const CUSTOM_MESSAGE = `
@@ -84,15 +89,23 @@ export default function App() {
   const [curtainsOpen, setCurtainsOpen] = useState(false);
   const [selectedMessage, setSelectedMessage] = useState(CUSTOM_MESSAGE);
   const [fireworksTrigger, setFireworksTrigger] = useState(0);
+  const [musicPlaying, setMusicPlaying] = useState(false);
 
   const handleCountdownComplete = useCallback(() => {
     setHasCountdownFinished(true);
+    // Fire immediate confetti burst when timer hits zero
+    confetti({
+      particleCount: CONFETTI_PARTICLE_COUNT,
+      spread: 70,
+      origin: { y: 0.7 },
+    });
     fireConfettiBursts();
     setFireworksTrigger((prev) => prev + 1);
   }, []);
 
   const handleCelebrate = useCallback(() => {
     setScreen('party');
+    setMusicPlaying(true);
   }, []);
 
   const handlePartyNext = useCallback(() => {
@@ -162,10 +175,12 @@ export default function App() {
     setScreen('countdown');
     setPartyOn(false);
     setCurtainsOpen(false);
+    setMusicPlaying(false);
   }, []);
 
   return (
     <div className={`app ${partyOn ? 'app--party' : ''}`}>
+      <MusicPlayer play={musicPlaying} loop={true} volume={0.5} musicUrl={MUSIC_URL} />
       <Balloons fast={partyOn} />
       <Sparkles active={hasCountdownFinished || partyOn} />
       <Fireworks trigger={fireworksTrigger} intensity="medium" />
