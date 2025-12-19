@@ -709,6 +709,7 @@
     margin: 0 0 0.7rem;
     font-size: 0.98rem;
     line-height: 1.55;
+    white-space: pre-line;
   }
   
   .letter__signoff {

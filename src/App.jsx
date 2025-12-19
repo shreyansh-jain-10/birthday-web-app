@@ -24,7 +24,25 @@ const CONFETTI_BURST_COUNT = 3;
 const CONFETTI_BURST_INTERVAL_MS = 420;
 
 // Custom birthday message - write your own message here
-const CUSTOM_MESSAGE = 'Write your heartfelt birthday message here. This will be displayed when the curtains open.';
+const CUSTOM_MESSAGE = `
+Happiest Birthday, my baby ❤️
+(SCROLL KRIYEGA)
+I'm truly grateful for your existence.
+You are so pretty—the prettiest girl I've ever seen, honestly.
+You are so special to me.
+The way you take care of me and the way you support me is truly exceptional.
+It's a very special day for me, because aaj aap aayi—tabhi toh mujhe aap mili
+(thanks to mummy-papa 👀).
+Honestly, I never thought that after everything that happened in the past, hum milenge bhi.
+But as we know, jo cheez apni hoti hai, woh eventually apne paas aa hi jaati hai 🧿.
+Many more birthdays with me to go🧿
+Gifts are waiting for you
+(though I'm the one waiting eagerly👀).
+Aapka Romeo will be waiting for you to take you on a date at Romeo Lane.
+I really wanna hug you and kiss you and make you feel special on this special day.
+I want to give you everything you want(I mean literaly everything).
+I love you so much ❤️🧿
+And once again, happiest birthday, my baby 😩❤️`;
 
 const initialTargetDate = new Date(TARGET_BIRTHDAY_ISO);
 
