@@ -14,7 +14,7 @@ export default function PresentBeautifulGirlScreen({ onNext }) {
           <div className="present-beautiful-girl-screen__photos">
             <div className="present-beautiful-girl-screen__photo-container">
               <img
-                src="/her_photo_two/IMG_1538.jpg"
+                src="https://res.cloudinary.com/dd6gpvdcx/image/upload/v1766063113/IMG_1538_dfs36r.jpg"
                 alt="Beautiful girl"
                 className="present-beautiful-girl-screen__photo"
                 loading="eager"
@@ -26,7 +26,7 @@ export default function PresentBeautifulGirlScreen({ onNext }) {
             </div>
             <div className="present-beautiful-girl-screen__photo-container">
               <img
-                src="/her_photo_two/IMG_1527.jpg"
+                src="https://res.cloudinary.com/dd6gpvdcx/image/upload/v1766063116/IMG_1527_uisnsn.jpg"
                 alt="Beautiful girl"
                 className="present-beautiful-girl-screen__photo"
                 loading="eager"

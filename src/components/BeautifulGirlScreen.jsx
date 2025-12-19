@@ -9,7 +9,7 @@ export default function BeautifulGirlScreen({ onNext }) {
         <div className="beautiful-girl-screen__content">
           <div className="beautiful-girl-screen__photo-container">
             <img
-              src="/her_photo_one/IMG_1353.jpg"
+              src="https://res.cloudinary.com/dd6gpvdcx/image/upload/v1766063155/IMG_1353_dobmt4.jpg"
               alt="Beautiful girl"
               className="beautiful-girl-screen__photo"
               loading="eager"

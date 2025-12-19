@@ -13,7 +13,7 @@ export default function SelfiesTogetherScreen({ onNext }) {
           <div className="selfies-together-screen__photos">
             <div className="selfies-together-screen__photo-container selfies-together-screen__photo-container--large">
               <img
-                src="/selfies_together/IMG_0272.jpg"
+                src="https://res.cloudinary.com/dd6gpvdcx/image/upload/v1766063198/IMG_0272_im7bal.jpg"
                 alt="Selfie together"
                 className="selfies-together-screen__photo"
                 loading="eager"
@@ -26,7 +26,7 @@ export default function SelfiesTogetherScreen({ onNext }) {
             <div className="selfies-together-screen__photos-row">
               <div className="selfies-together-screen__photo-container">
                 <img
-                  src="/selfies_together/IMG_5692.jpg"
+                  src="https://res.cloudinary.com/dd6gpvdcx/image/upload/v1766063184/IMG_5692_ex43oj.jpg"
                   alt="Selfie together"
                   className="selfies-together-screen__photo"
                   loading="eager"
@@ -38,7 +38,7 @@ export default function SelfiesTogetherScreen({ onNext }) {
               </div>
               <div className="selfies-together-screen__photo-container">
                 <img
-                  src="/selfies_together/IMG_1540.jpg"
+                  src="https://res.cloudinary.com/dd6gpvdcx/image/upload/v1766063497/IMG_1540_ilfehu.jpg"
                   alt="Selfie together"
                   className="selfies-together-screen__photo"
                   loading="eager"

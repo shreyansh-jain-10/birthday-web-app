@@ -14,7 +14,7 @@ export default function ChildhoodBeautifulScreen({ onNext }) {
           <div className="childhood-beautiful-screen__photos">
             <div className="childhood-beautiful-screen__photo-container">
               <img
-                src="/her_kid_photos/IMG_4802.jpg"
+                src="https://res.cloudinary.com/dd6gpvdcx/image/upload/v1766063165/IMG_4802_mbharr.jpg"
                 alt="Beautiful girl as a child"
                 className="childhood-beautiful-screen__photo"
                 loading="eager"
@@ -26,7 +26,7 @@ export default function ChildhoodBeautifulScreen({ onNext }) {
             </div>
             <div className="childhood-beautiful-screen__photo-container">
               <img
-                src="/her_kid_photos/IMG_4804.PNG"
+                src="https://res.cloudinary.com/dd6gpvdcx/image/upload/v1766063175/IMG_4804_qbu9q3.png"
                 alt="Beautiful girl as a child"
                 className="childhood-beautiful-screen__photo"
                 loading="eager"

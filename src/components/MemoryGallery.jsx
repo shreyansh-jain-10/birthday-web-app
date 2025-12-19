@@ -4,11 +4,11 @@ import React from 'react';
 const PHOTOS = [
   {
     id: 1,
-    src: '/photos/IMG_6988.JPG',
+    src: 'https://res.cloudinary.com/dd6gpvdcx/image/upload/v1766063064/IMG_6988_aqasoy.jpg',
   },
   {
     id: 2,
-    src: '/photos/IMG_7297.jpg',
+    src: 'https://res.cloudinary.com/dd6gpvdcx/image/upload/v1766063064/IMG_7297_gqsubh.jpg',
   },
 ];
 

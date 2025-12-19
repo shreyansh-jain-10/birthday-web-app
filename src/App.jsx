@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useEffect } from 'react';
+import React, { useCallback, useState } from 'react';
 import confetti from 'canvas-confetti';
 import Countdown from './components/Countdown.jsx';
 import BirthdaySurpriseScreen from './components/BirthdaySurpriseScreen.jsx';
@@ -15,7 +15,6 @@ import Balloons from './components/Balloons.jsx';
 import Sparkles from './components/Sparkles.jsx';
 import Fireworks from './components/Fireworks.jsx';
 import { messages } from './data/messages.js';
-import { preloadAllImages } from './utils/imagePreloader.js';
 
 // Central configuration values for easy customization.
 // Countdown target: 20 December, 12:00 AM (local time)
@@ -71,15 +70,6 @@ export default function App() {
   const [curtainsOpen, setCurtainsOpen] = useState(false);
   const [selectedMessage, setSelectedMessage] = useState(getRandomMessage);
   const [fireworksTrigger, setFireworksTrigger] = useState(0);
-
-  // Preload all images when app mounts for instant display
-  useEffect(() => {
-    preloadAllImages().then(() => {
-      console.log('All images preloaded successfully');
-    }).catch((error) => {
-      console.warn('Some images failed to preload:', error);
-    });
-  }, []);
 
   const handleCountdownComplete = useCallback(() => {
     setHasCountdownFinished(true);
